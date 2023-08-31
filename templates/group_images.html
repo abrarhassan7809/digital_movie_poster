@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="margin-top: 20px; margin-bottom: 50px;" class="container">
+    <h2 style="text-align: center; padding: 20px;">{{ group_name }}</h2>
+    <div class="row">
+        <div class="col-12">
+            <div class="col-12">
+                <a href="/group_list/"><button style="margin: 0px 0px 10px 30px" type="button">Go Back</button></a>
+            </div>
+            <br>
+            <div class="gallery">
+                {% if result %}
+                    {% for image_path in result %}
+                        <div class="thumbnail">
+                            <img src="{{ image_path }}" alt="{{ image_file }}">
+                            <div class="thumbnail-overlay">
+                                <a href="{{ image_path }}" target="_blank">View</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No images found in this group.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

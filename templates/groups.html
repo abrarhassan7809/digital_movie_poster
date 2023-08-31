@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="margin-top: 20px; margin-bottom: 50px;" class="container">
+    <h2 style="text-align: center; padding: 20px;">Groups</h2>
+    <div class="row">
+        <div class="col-12">
+            {% if groups %}
+                <ul class="list-group">
+                    {% for group in groups %}
+                        <li class="list-group-item">
+                            <a href="/group/{{ group }}/">{{ group }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No groups found.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

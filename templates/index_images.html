@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 align=center style="margin-top: 20px">DMP Remote</h1>
+    <div>
+        <form align=center>
+            <button type="submit" name="command" value="next">Next</button>
+            <button type="submit" name="command" value="previous">Previous</button>
+            <button type="submit" name="command" value="zoom_in">Zoom In</button>
+            <button type="submit" name="command" value="zoom_out">Zoom Out</button>
+            <button type="submit" name="command" value="rotate">Rotate</button>
+        </form>
+    </div>
+    <h1 align="center" style="margin-top: 10px; margin-bottom: 10px">Gallery</h1>
+    <div class="col-12" style="text-align: center; padding: 0px 0px 40px 0px">
+        <form action="/upload_files/" method="post" enctype="multipart/form-data">
+            <div>
+                <input type="file" name="files" accept=".jpg, .jpeg, .png" multiple>
+                <button type="submit">Upload</button>
+            </div>
+            <div style="padding: 10px 0px 10px 0px; margin-top: 20px">
+                <button type="submit"><a style="text-align: center; text-decoration: none; color: black"
+                                         href="/create_group/">Create Group</a></button>
+                <button type="submit"><a style="text-align: center; text-decoration: none; color: black"
+                                         href="/group_list/">Group List</a></button>
+            </div>
+        </form>
+    </div>
+    <div class="gallery">
+        {% for image_path in result %}
+            <div class="thumbnail">
+                <img src="{{ image_path }}" alt="{{ image_file }}">
+                <div class="thumbnail-overlay">
+                    <a href="{{ image_path }}" target="_blank">View</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock content %}
+
+

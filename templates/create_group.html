@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="margin-top: 20px; margin-bottom: 50px;" class="container">
+    <h2 style="text-align: center; padding: 20px;">Create Alert</h2>
+    {% for error in errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+    {% endfor %}
+    <form action="/create_group/" method="post">
+        <div class="mb-3" style="padding: 0px 0px 30px 50px">
+            <label>Enter Group Name</label>
+            <input type="text" placeholder="group name" name="group_name" class="form-control" required>
+            <input style="margin-left: 20px" type="submit" value="Create" />
+            <a href="/gallery/"><button type="button">Go Back</button></a>
+        </div>
+        <div class="gallery" style="padding:20px 0px 0px 20px">
+            {% for image_path in result %}
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="select_images" value="{{ image_path }}">
+                    <label class="form-check-label">
+                        <img src="{{ image_path }}" height="200px" width="200px">
+                    </label>
+                </div>
+            {% endfor %}
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

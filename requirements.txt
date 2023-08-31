@@ -1,0 +1,8 @@
+selenium
+webdriver_manager
+requests
+fastapi
+starlette
+uvicorn
+jinja2
+python-multipart

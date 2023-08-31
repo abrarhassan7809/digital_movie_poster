@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="margin-top: 20px; margin-bottom: 50px;" class="container">
+    <h2 style="text-align: center; padding: 20px;">Group List</h2>
+    <div class="">
+        <a href="/gallery/"><button style="margin: 0px 0px 10px 30px" type="button">Go Back</button></a>
+    </div>
+    <br>
+    <div class="gallery">
+        {% if groups %}
+            {% for group in groups %}
+                <div class="thumbnail" style="background-color: white;">
+                    <div class="thumbnail-overlay">
+                        <a style="text-decoration: none; font-size: 20px; color: gray; padding: 30px; background-color: white;" href="/group/{{ group }}/">{{ group }}</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No groups found.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

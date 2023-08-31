@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Pictures</title>
+    <script>
+        function showImage(imagePath) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = imagePath;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+    </script>
+    <style>
+        /* CSS styles for the image modal */
+        #imageModal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 20px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        #modalImage {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .close {
+            color: #ccc;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>List of Pictures</h1>
+    <ul>
+        {% for picture in pictures %}
+            <li>
+                <a href="#" onclick="showImage('{{ folder_path }}/{{ picture }}')">{{ picture }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- The image modal -->
+    <div id="imageModal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" alt="Image" />
+    </div>
+</body>
+</html>

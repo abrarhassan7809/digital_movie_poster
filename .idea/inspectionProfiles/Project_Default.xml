@@ -1,0 +1,51 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="7">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="table" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="cv2.*" />
+          <option value="PySide2.QtWidgets.triggered.connect" />
+          <option value="PySide2.QtWidgets.clicked.connect" />
+          <option value="object.clear" />
+          <option value="object.columnCount" />
+          <option value="object.horizontalHeaderItem" />
+          <option value="object.item" />
+          <option value="object.rowCount" />
+          <option value="object.insertRow" />
+          <option value="object.setItem" />
+          <option value="object.selectedItems" />
+          <option value="object.removeRow" />
+          <option value="PySide2.QtWidgets.activated.connect" />
+          <option value="object.setColumnCount" />
+          <option value="object.setHorizontalHeaderLabels" />
+          <option value="object.setRowCount" />
+          <option value="object.setSelectionBehavior" />
+          <option value="object.horizontalHeader" />
+          <option value="PySide2.QtWidgets.currentIndexChanged.connect" />
+          <option value="PySide2.QtWidgets.textChanged.connect" />
+          <option value="object.setColumnWidth" />
+          <option value="object.viewport" />
+          <option value="object.columnWidth" />
+          <option value="email.mime.text.MIMEText.__setitem__" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
