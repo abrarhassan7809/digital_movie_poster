@@ -16,7 +16,7 @@ poster_data = 'poster_data'
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 driver.get(url_link)
-driver.maximize_window()
+# driver.maximize_window()
 print(f"Page Title: {driver.title}")
 
 cards = driver.find_elements(By.XPATH, "//div[@class='card style_1']")
@@ -53,10 +53,10 @@ for card in cards:
     movie_dates = find_dates.find_element(By.TAG_NAME, "p")
 
     # appending all files
-    movies_list.append(f"{headings_text.text}, {image_url}, {movie_dates.text}")
+    movies_list.append(f"{headings_text.text}, {save_image_path}, {movie_dates.text}")
 
 if len(movies_list) > 0:
-    if not os.path.isdir(poster_data):
+    if os.path.isdir(poster_data):
         os.makedirs(poster_data)
         with open(f"{poster_data}/data.text", 'w') as f:
             for data in movies_list:

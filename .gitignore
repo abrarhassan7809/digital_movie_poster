@@ -1,4 +1,8 @@
 static
 poster_data
 venv
-
+__pycache__
+.idea
+chromedriver
+chromedriver_linux64.zip
+LICENSE.chromedriver

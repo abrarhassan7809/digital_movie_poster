@@ -46,7 +46,7 @@ class HeadLess:
         movies_list = []
 
         for card in cards:
-            if len(movies_list) >= 3:
+            if len(movies_list) >= 5:
                 break
             # for images
             print("Processing...")
@@ -84,7 +84,7 @@ class HeadLess:
             movies_list.append(f"{headings_text.text}, {save_image_path}, {movie_dates.text}")
 
         if len(movies_list) > 0:
-            if not os.path.isdir('movies data'):
+            if os.path.exists('movies data'):
                 os.makedirs(poster_data)
                 with open(f"{poster_data}/data.text", 'w') as f:
                     for data in movies_list:
