@@ -17,7 +17,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 
-@app.get("/gallery/")
+@app.get("/")
 async def gallery(request: Request):
     result = []
     if os.listdir(IMAGEDIR):
@@ -40,9 +40,9 @@ async def upload_files(files: List[UploadFile] = File(...)):
         if not os.path.exists(file_path):
             with open(file_path, "wb") as f:
                 f.write(contents)
-            print('Image added successfully')
+
         else:
-            print('Image already exists')
+            pass
 
     redirect_url = app.url_path_for('gallery')
     return RedirectResponse(url=redirect_url, status_code=status.HTTP_303_SEE_OTHER)
@@ -73,9 +73,9 @@ async def process_create_group(group_name: str = Form(...), select_images: List[
         dest_path = os.path.join(group_dir, image_name)
         if os.path.exists(src_path):
             shutil.move(src_path, dest_path)
-            print(f"Moved image {image_name} to {group_name}")
+
         else:
-            print(f"Image {image_name} not found")
+            pass
 
     redirect_url = app.url_path_for('gallery')
     return RedirectResponse(url=redirect_url, status_code=status.HTTP_303_SEE_OTHER)
